@@ -30,6 +30,89 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Selections[1] == 1) {
         col1count += 1
     }
+    if (Selections[2] == 1) {
+        col1count += 1
+        col3count += 1
+    }
+    if (Selections[3] == 1) {
+        col1count += 1
+    }
+    if (Selections[4] == 1) {
+        col1count += 1
+        col4count += 1
+    }
+    if (Selections[5] == 1) {
+        col1count += 1
+        col2count += 1
+    }
+    if (Selections[6] == 1) {
+        col1count += 1
+        col2count += 1
+    }
+    if (Selections[7] == 1) {
+        col2count += 1
+        col6count += 1
+    }
+    if (Selections[8] == 1) {
+        col2count += 1
+        col3count += 1
+    }
+    if (Selections[9] == 1) {
+        col2count += 1
+        col3count += 1
+    }
+    if (Selections[10] == 1) {
+        col2count += 1
+        col4count += 1
+    }
+    if (Selections[11] == 1) {
+        col3count += 1
+    }
+    if (Selections[12] == 1) {
+        col3count += 1
+    }
+    if (Selections[13] == 1) {
+        col3count += 1
+        col4count += 1
+    }
+    if (Selections[14] == 1) {
+        col3count += 1
+    }
+    if (Selections[15] == 1) {
+        col4count += 1
+        col6count += 1
+    }
+    if (Selections[16] == 1) {
+        col4count += 1
+        col5count += 1
+    }
+    if (Selections[17] == 1) {
+        col4count += 1
+        col5count += 1
+    }
+    if (Selections[18] == 1) {
+        col4count += 1
+        col5count += 1
+    }
+    if (Selections[19] == 1) {
+        col5count += 1
+        col6count += 1
+    }
+    if (Selections[20] == 1) {
+        col5count += 1
+    }
+    if (Selections[21] == 1) {
+        col6count += 1
+    }
+    if (Selections[22] == 1) {
+        col6count += 1
+    }
+    if (Selections[23] == 1) {
+        col6count += 1
+    }
+    if (Selections[24] == 1) {
+        col6count += 1
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     current = curY * 7 + curX
