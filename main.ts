@@ -91,18 +91,17 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         col5count += 1
     }
     if (Selections[18] == 1) {
-        col4count += 1
         col5count += 1
+        col6count += 1
     }
     if (Selections[19] == 1) {
         col5count += 1
-        col6count += 1
     }
     if (Selections[20] == 1) {
         col5count += 1
     }
     if (Selections[21] == 1) {
-        col6count += 1
+        col5count += 1
     }
     if (Selections[22] == 1) {
         col6count += 1
@@ -111,6 +110,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         col6count += 1
     }
     if (Selections[24] == 1) {
+        col6count += 1
+    }
+    if (Selections[25] == 1) {
         col6count += 1
     }
 })
