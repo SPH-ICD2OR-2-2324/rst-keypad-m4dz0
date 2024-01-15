@@ -23,6 +23,143 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     col4count = 0
     col5count = 0
     col6count = 0
+    colCounter()
+    print()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    current = curY * 7 + curX
+    Selections[current] = Selections[current] * -1
+    if (Selections[current] == 1) {
+        if (SelectedCount == 4) {
+            Selections[current] = Selections[current] * -1
+        } else {
+            SelectedCount += 1
+            keypadList[current].replace(0, 7)
+        }
+    } else {
+        SelectedCount += -1
+        keypadList[current].replace(7, 0)
+    }
+    clearScreen()
+    InitKeys()
+    InitCursor()
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    curX = Math.max(0, curX - 1)
+    UpdateCursor()
+})
+function clearScreen () {
+    sprite_list = sprites.allOfKind(SpriteKind.UI)
+    for (let value of sprite_list) {
+        value.destroy()
+    }
+}
+function InitCursor () {
+    cursorSprite = sprites.create(img`
+        88888..........88888
+        88888..........88888
+        88................88
+        88................88
+        88................88
+        88................88
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        88................88
+        88................88
+        88................88
+        88................88
+        88................88
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        ....................
+        88................88
+        88................88
+        88................88
+        88888..........88888
+        88888..........88888
+        `, SpriteKind.UI)
+    UpdateCursor()
+}
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (curY < 3) {
+        curX = Math.min(6, curX + 1)
+    } else {
+        curX = Math.min(5, curX + 1)
+    }
+    UpdateCursor()
+})
+function print () {
+    if (col1count == 4) {
+    	
+    }
+    if (col2count == 4) {
+    	
+    }
+    if (col3count == 4) {
+    	
+    }
+    if (col4count == 4) {
+    	
+    }
+    if (col5count == 4) {
+    	
+    }
+    if (col6count == 4) {
+    	
+    }
+}
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (curX == 6) {
+        curY = Math.min(2, curY + 1)
+    } else {
+        curY = Math.min(3, curY + 1)
+    }
+    UpdateCursor()
+})
+function InitArray () {
+    Selections = [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+    ]
+}
+sprites.onCreated(SpriteKind.UI, function (sprite) {
+    sprite.setFlag(SpriteFlag.Ghost, true)
+})
+function colCounter () {
     if (Selections[0] == 1) {
         col1count += 1
         col2count += 1
@@ -115,124 +252,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Selections[25] == 1) {
         col6count += 1
     }
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    current = curY * 7 + curX
-    Selections[current] = Selections[current] * -1
-    if (Selections[current] == 1) {
-        if (SelectedCount == 4) {
-            Selections[current] = Selections[current] * -1
-        } else {
-            SelectedCount += 1
-            keypadList[current].replace(0, 7)
-        }
-    } else {
-        SelectedCount += -1
-        keypadList[current].replace(7, 0)
-    }
-    clearScreen()
-    InitKeys()
-    InitCursor()
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    curX = Math.max(0, curX - 1)
-    UpdateCursor()
-})
-function clearScreen () {
-    sprite_list = sprites.allOfKind(SpriteKind.UI)
-    for (let value of sprite_list) {
-        value.destroy()
-    }
 }
-function InitCursor () {
-    cursorSprite = sprites.create(img`
-        88888..........88888
-        88888..........88888
-        88................88
-        88................88
-        88................88
-        88................88
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        88................88
-        88................88
-        88................88
-        88................88
-        88................88
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        ....................
-        88................88
-        88................88
-        88................88
-        88888..........88888
-        88888..........88888
-        `, SpriteKind.UI)
-    UpdateCursor()
-}
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (curY < 3) {
-        curX = Math.min(6, curX + 1)
-    } else {
-        curX = Math.min(5, curX + 1)
-    }
-    UpdateCursor()
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (curX == 6) {
-        curY = Math.min(2, curY + 1)
-    } else {
-        curY = Math.min(3, curY + 1)
-    }
-    UpdateCursor()
-})
-function InitArray () {
-    Selections = [
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1,
-    -1
-    ]
-}
-sprites.onCreated(SpriteKind.UI, function (sprite) {
-    sprite.setFlag(SpriteFlag.Ghost, true)
-})
 let sprite_list: Sprite[] = []
 let SelectedCount = 0
-let current = 0
 let Selections: number[] = []
+let current = 0
 let col6count = 0
 let col5count = 0
 let col4count = 0
