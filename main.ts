@@ -235,17 +235,17 @@ function printCol6 () {
     if (Selections[7] == 1) {
         printout.push(7)
     }
-    if (Selections[22] == 1) {
-        printout.push(22)
-    }
     if (Selections[23] == 1) {
         printout.push(23)
+    }
+    if (Selections[24] == 1) {
+        printout.push(24)
     }
     if (Selections[19] == 1) {
         printout.push(19)
     }
-    if (Selections[24] == 1) {
-        printout.push(24)
+    if (Selections[25] == 1) {
+        printout.push(25)
     }
     if (Selections[26] == 1) {
         printout.push(26)
