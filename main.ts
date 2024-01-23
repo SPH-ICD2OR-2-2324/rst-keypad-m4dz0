@@ -289,21 +289,33 @@ function printCol4 () {
 function colCountComplete () {
     if (col1count == 4) {
         printCol1()
+    } else {
+        game.splash("INVALID")
     }
     if (col2count == 4) {
         printCol2()
+    } else {
+        game.splash("INVALID")
     }
     if (col3count == 4) {
         printCol3()
+    } else {
+        game.splash("INVALID")
     }
     if (col4count == 4) {
         printCol4()
+    } else {
+        game.splash("INVALID")
     }
     if (col5count == 4) {
         printCol5()
+    } else {
+        game.splash("INVALID")
     }
     if (col6count == 4) {
         printCol6()
+    } else {
+        game.splash("INVALID")
     }
 }
 function printCol5 () {
